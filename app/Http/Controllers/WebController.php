@@ -18,4 +18,8 @@ class WebController extends Controller
     public function about(){
         return view("about");
     }
+
+    public function category($id){
+
+    }
 }

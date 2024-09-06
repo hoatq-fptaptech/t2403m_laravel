@@ -6,7 +6,7 @@
         <aside class="col-3">
             <ul class="list-group">
                 @foreach($categories as $item)
-                <li class="list-group-item"><a href="#">{{$item["name"]}}</a></li>     
+                <li class="list-group-item"><a href="/category/{{$item["id"]}}">{{$item["name"]}}</a></li>     
                 @endforeach     
             </ul>
         </aside>
