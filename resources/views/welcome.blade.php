@@ -11,7 +11,21 @@
             </ul>
         </aside>
         <div class="col">
-
+            <div class="row">
+                @foreach ($products as $item)
+                <div class="col-4">
+                    <div class="card mt-3 mb-3">
+                        <img src="{{$item->thumbnail}}" class="w-100 card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$item->name}}</h5>
+                            <p class="card-text">{{$item->price}}</p>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            {!! $products->links("pagination::bootstrap-4") !!}
         </div>
     </div>
 </div>

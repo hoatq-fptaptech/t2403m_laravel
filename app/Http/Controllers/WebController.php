@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -10,7 +11,8 @@ class WebController extends Controller
     // code here
     public function home(){
         $categories = Category::all()->toArray();
-        return view('welcome',compact("categories"));
+        $products = Product::paginate(9);
+        return view('welcome',compact("categories","products"));
     }
 
     public function about(){
